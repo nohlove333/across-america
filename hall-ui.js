@@ -1,7 +1,7 @@
 import {drawPassport} from './passport72.js?v=quick91';
 import {poemCredit,poemReading} from './poem-credit.js?v=quick91';
 import{renderNewspaper,drawPosedPhoto,drawHallBackdrop}from'./hall-export.js?v=quick91';
-import {createHallWalk} from './hall-walk.js?v=perf97';
+import {createHallWalk} from './hall-walk.js?v=hallcompact';
 import {paintHallPlaza} from './hall-plaza.js?v=quick91';
 import{buildTravelArticle}from'./hall-article.js?v=quick91';
 import{HALL_READINGS,REPORTERS,HALL_FRAMES,HALL_TITLES}from'./hall-data.js?v=quick91';
