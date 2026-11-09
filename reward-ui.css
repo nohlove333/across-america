@@ -93,3 +93,12 @@
 #infoDialog.treasure-dialog .geography-finding{margin:12px 0;padding:10px}
 @media(max-width:600px){#infoDialog.compact-quiz #dialogBody{padding:10px 14px 0}#infoDialog.compact-quiz .quiz-person .coin-badge{font-size:8px}.bag-card-grid{gap:7px}#infoDialog.bag-dialog #dialogBody{padding:12px}.bag-card img,.bag-card .bag-flag{height:74px}.bag-card-number{font-size:9px}#dialogBody .bag-card strong{font-size:11px}#dialogBody .bag-card small{font-size:9px}.bag-record-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.quiz-dock-meta button{max-width:65%}}
 @media(max-height:530px){#infoDialog.compact-quiz .quiz-person{display:none}.quiz-reading{min-height:65px}#infoDialog.compact-quiz #dialogBody{max-height:calc(94dvh - 85px)}.quiz-dock-meta{margin-top:4px}}
+
+/* The final password has clues and a form in one scrollable body. */
+#infoDialog.password-dialog.compact-quiz #dialogBody {
+  max-height: none;
+  overflow: auto;
+  overscroll-behavior: contain;
+  display: block;
+  padding-bottom: 16px;
+}
