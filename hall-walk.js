@@ -1,6 +1,6 @@
 import {suppressControlSelection} from './touch-controls.js?v=quick91';
 import {createPositionWriter} from './position-writer.js?v=quick91';
-import{HallView}from'./hall-view.js?v=perf97';
+import{HallView}from'./hall-view.js?v=hallcompact';
 import{getSprite,walkingSprite}from'./player-sprites.js?v=quick91';
 import{bindQuebecGestures,screenToWorld}from'./quebec-controls.js?v=quick91';
 import{HALL_STATIONS,hallWalkable,hallPath}from'./hall-model.js?v=quick91';
