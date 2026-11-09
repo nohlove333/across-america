@@ -67,3 +67,22 @@
   .hall-walk-stage .hall-camera-toolbar { max-width:calc(100% - 170px); }
   .hall-walk-stage .hall-camera-toolbar button { min-height:44px; padding:5px 8px; }
 }
+
+/* Keep hall popups within the visible screen; long content scrolls inside. */
+#infoDialog.hall-dialog[open] { max-height: calc(100dvh - 24px); }
+#infoDialog.hall-dialog > #dialogTitle { flex: none; }
+#infoDialog.hall-dialog > #dialogBody {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.hall-dialog #passportCanvas {
+  display: block;
+  width: min(100%, 260px, 32dvh);
+  height: auto;
+  margin: 8px auto;
+}
+.hall-dialog .passport-grid { gap: 8px; margin: 12px 0; }
+.hall-dialog .passport-grid button { min-height: 84px; gap: 4px; padding: 6px; }
+.hall-dialog .passport-grid img { width: 40px; height: 25px; }
+.hall-dialog #giftPreview { max-width: 100%; max-height: 30dvh; object-fit: contain; }
