@@ -45,9 +45,28 @@ export function createHallUI({openInfo,toast,getAvatar,applyAvatar,getProgress,g
  const answer=text=>{if(!String(text).trim()){toast('한마디를 적거나 선택지로 답해 주세요.');return;}store.answer(r.id,text);renderBackground();interview(index,'reply');};
  r.choices.forEach((v,i)=>bind('quote-'+i,()=>answer(v)));const form=body.querySelector('#interviewForm');if(form)form.onsubmit=e=>{e.preventDefault();answer(body.querySelector('#interviewReply').value);};bind('listenOnly',()=>answer('오늘은 듣는 여행자로 참여했어요.'));bind('interviewNext',()=>index<2?interview(index+1):article());
  }
- function article(){const c=store.get(),a=buildTravelArticle(getAvatar().name,c.interviews,c.enteredAt.slice(0,10));open('나의 탐험가 신문',`<article class="traveler-paper"><span class="eyebrow">ACROSS AMERICA DAILY · 탐험가 특집</span><h3>${esc(a.title)}</h3><h4>${esc(a.subtitle)}</h4><p>${esc(a.date)} · ${esc(c.title)}</p><p>${esc(a.lead)}</p>${a.sections.map(row=>`<section><h4>${esc(row.title)}</h4><p>${esc(row.text)}</p></section>`).join('')}<p>${esc(a.closing)}</p><small>${esc(a.note)}</small></article>${button('articleInterview','인터뷰 추가·수정하기')}${button('articleSave','기사 이미지 저장','primary')}<p id="articleDownloadStatus" role="status"></p><div id="articleSaveLinks"></div>`);bind('articleInterview',()=>interview(0));bind('articleSave',()=>download('article'));}
+ function article(){const avatar=getAvatar(),c=store.get(),a=buildTravelArticle(avatar.name,c.interviews,c.enteredAt.slice(0,10));open('나의 탐험가 신문',`<p id="articlePreview" role="status">신문 지면을 준비하고 있어요…</p><details id="articleText" open><summary>기사 텍스트 읽기</summary><article class="traveler-paper"><span class="eyebrow">ACROSS AMERICA DAILY · 탐험가 특집</span><h3>${esc(a.title)}</h3><h4>${esc(a.subtitle)}</h4><p>${esc(a.date)} · ${esc(c.title)}</p><p>${esc(a.lead)}</p>${a.sections.map(row=>`<section><h4>${esc(row.title)}</h4><p>${esc(row.text)}</p></section>`).join('')}<p>${esc(a.closing)}</p><small>${esc(a.note)}</small></article></details>${button('articleInterview','인터뷰 추가·수정하기')}${button('articleSave','기사 이미지 저장','primary')}<p id="articleDownloadStatus" role="status"></p><div id="articleSaveLinks"></div>`);bind('articleInterview',()=>interview(0));bind('articleSave',()=>download('article'));
+ const preview=body.querySelector('#articlePreview'),text=body.querySelector('#articleText');
+ void paintArticlePreview(preview,text,a,avatar,getSummary());
+ }
 
  let passportSequence=0;
+ async function paintArticlePreview(preview,text,article,avatar,summary){
+  try{
+   const [sprite]=await Promise.all([getSprite(avatar),document.fonts?.ready]);
+   if(!preview.isConnected)return;
+   const paper=renderNewspaper({article,avatar,sprite,date:article.date,summary});
+   paper.setAttribute('role','img');
+   paper.setAttribute('aria-label','ACROSS AMERICA DAILY · 나의 탐험가 신문');
+   paper.style.cssText='display:block;width:100%;max-width:760px;height:auto;margin:0 auto 16px';
+   preview.replaceWith(paper);
+   text.open=false;
+  }catch(error){
+   console.error(error);
+   if(preview.isConnected)preview.textContent='신문 이미지를 불러오지 못했어요. 아래에서 기사를 읽을 수 있어요.';
+  }
+ }
+
  function passport(){const c=store.get(),visited=getVisited();open('나의 기념 스탬프 여권',`<p>탐험한 나라에만 스탬프를 찍을 수 있어요.</p><h3> 여권 테두리 색상</h3><div class="hall-pick-row">${HALL_FRAMES.map(([id,n,color])=>`<button type="button" data-passport-frame="${id}" aria-pressed="${c.frame===id}" style="border-color:${color}">${n}</button>`).join('')}</div><canvas id="passportCanvas" class="passport-preview" width="1000" height="1320" aria-label="탐험가 사진·이름·탐험 날짜가 담긴 여권"></canvas><div class="passport-grid">${HALL_READINGS.map(r=>`<button type="button" data-stamp="${r.id}" ${visited.includes(r.id)?'':'disabled'} aria-pressed="${visited.includes(r.id)&&c.stamps.includes(r.id)}"><img src="assets/flags/${r.id}.png" alt="" width="64" height="40"><b>${r.country}</b><span>${!visited.includes(r.id)?'탐험 후 찍을 수 있어요':c.stamps.includes(r.id)?'AA · 찍었어요!':'스탬프 찍기'}</span></button>`).join('')}</div>${button('passportSave','여권 이미지 저장','primary')}${button('passportRead','알아둬도 쓸데없는 지식들')}<p id="passportStatus" role="status"></p><div id="passportLinks" class="passport-save-links"></div>`);body.querySelectorAll('[data-stamp]').forEach(b=>b.onclick=()=>{if(!visited.includes(b.dataset.stamp))return;store.stamp(b.dataset.stamp);passport();renderBackground();});body.querySelectorAll('[data-passport-frame]').forEach(b=>b.onclick=()=>{store.wear('frame',b.dataset.passportFrame);passport();});bind('passportRead',library);paintPassport();bind('passportSave',savePassport);}
  async function paintPassport(){const seq=++passportSequence,cv=document.getElementById('passportCanvas');if(!cv)return null;await document.fonts?.ready;const sprite=await getSprite(getAvatar());if(seq!==passportSequence||!cv.isConnected)return null;const date=new Date().toLocaleDateString('sv-SE',{timeZone:'Asia/Seoul'});return drawPassport(cv,{avatar:getAvatar(),sprite,countries:HALL_READINGS,visited:getVisited(),stamps:store.get().stamps,date,frame:HALL_FRAMES.find(f=>f[0]===store.get().frame)[2]});}
  async function savePassport(){const status=document.getElementById('passportStatus');try{const cv=await paintPassport();if(!cv)throw Error();const blob=await new Promise(resolve=>cv.toBlob(resolve,'image/png'));if(!blob)throw Error();const url=URL.createObjectURL(blob);downloadUrls.push(url);const a=document.createElement('a');a.href=url;a.download='Across-America-나의-탐험-여권.png';document.body.append(a);a.click();a.remove();status.textContent='여권 이미지를 준비했어요.';document.getElementById('passportLinks').innerHTML=`<a href="${url}" download="${a.download}">다시 저장</a> · <a href="${url}" target="_blank" rel="noopener">이미지 열기</a>`;}catch{if(status)status.textContent='여권을 저장하지 못했어요. 다시 시도해 주세요.';}}
