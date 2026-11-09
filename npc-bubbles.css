@@ -10,7 +10,7 @@
 /* A hollow border is essential: a black full rectangle would make the
    translucent paper opaque. Text remains solid and pointer events pass through. */
 .npc-bubble-frame::before{content:"";position:absolute;inset:0;padding:3px;background:rgba(17,17,17,.82);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
-.living-npc-bubble{transition:opacity .24s ease,transform .24s ease;will-change:opacity,transform}
+.living-npc-bubble{transition:opacity .18s ease,transform .18s ease;will-change:opacity,transform}
 .living-npc-bubble[data-phase=exit]{opacity:0;transform:translateY(-5px)}
 @media(prefers-reduced-motion:reduce){.living-npc-bubble{transition:none;will-change:auto}}
 
