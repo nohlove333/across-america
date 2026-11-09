@@ -1,0 +1,6 @@
+어비 마이센체 / UhBee Mysen · 어비폰트
+https://uhbeefont.com/ · https://noonnu.cc/font_page/178
+상업적 용도 및 웹사이트 임베딩에 무료 사용 가능. 폰트 자체 유료 판매 금지.
+웹폰트 및 변환 결과물은 무료로 제공되어야 합니다.
+원문 라이선스: https://www.sandollcloud.com/free-font/16558/UhBee-Mysen-TTF
+원본 배포 웹폰트: https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeemysen.woff

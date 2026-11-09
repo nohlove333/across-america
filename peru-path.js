@@ -1,0 +1,8 @@
+import {PERU_SIZE,peruCanWalk,peruSegmentClear} from './peru-data.js?v=quick91';
+// Sample grid edges as well as vertices: thin rails cannot be crossed between cells.
+export function findPeruPath(start,goal){const step=20,cols=Math.ceil(PERU_SIZE[0]/step)+1,rows=Math.ceil(PERU_SIZE[1]/step)+1,key=(x,y)=>y*cols+x,point=(x,y)=>({x:x*step,y:y*step}),valid=(x,y)=>x>=0&&y>=0&&x<cols&&y<rows&&peruCanWalk(x*step,y*step);if(!peruCanWalk(goal.x,goal.y)||!peruCanWalk(start.x,start.y))return null;
+ const snap=p=>{const x=Math.round(p.x/step),y=Math.round(p.y/step);let best=null,distance=Infinity;for(let radius=0;radius<5;radius++){for(let dx=-radius;dx<=radius;dx++)for(let dy=-radius;dy<=radius;dy++){const xx=x+dx,yy=y+dy;if(!valid(xx,yy)||!peruSegmentClear(p,point(xx,yy)))continue;const d=Math.hypot(p.x-xx*step,p.y-yy*step);if(d<distance){best=[xx,yy];distance=d;}}if(best)return best;}return null;};
+ const first=snap(start),last=snap(goal);if(!first||!last)return null;const from=new Int32Array(cols*rows).fill(-1),queue=[key(...first)],end=key(...last);from[queue[0]]=queue[0];
+ for(let n=0;n<queue.length&&from[end]===-1;n++){const k=queue[n],x=k%cols,y=Math.floor(k/cols);for(const [dx,dy]of [[1,0],[-1,0],[0,1],[0,-1]]){const xx=x+dx,yy=y+dy,at=key(xx,yy);if(!valid(xx,yy)||from[at]!==-1||!peruSegmentClear(point(x,y),point(xx,yy)))continue;from[at]=k;queue.push(at);}}
+ if(from[end]===-1)return null;const route=[];for(let k=end;k!==queue[0];k=from[k])route.push(point(k%cols,Math.floor(k/cols)));route.push(point(...first));route.reverse();route.push({x:goal.x,y:goal.y});return route;
+}

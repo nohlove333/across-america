@@ -1,0 +1,74 @@
+/* Locally served typefaces selected to match the supplied print references. */
+@font-face{font-family:'AA Body';src:url('assets/fonts/GmarketSansMedium.woff') format('woff');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'AA Journal';src:url('assets/fonts/Galmuri11.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'AA Hand';src:url('assets/fonts/UhBeemysen.woff') format('woff');font-weight:400;font-style:normal;font-display:swap}
+:root{--font:'AA Body','Noto Sans KR',sans-serif;--subheading:'AA Subheading',serif;--journal:'AA Journal',sans-serif;--hand:'AA Hand',cursive}
+body{font-family:var(--font);font-weight:500;line-height:1.75}button,input,select{font-family:var(--font)}
+.intro h1,.section-header h2,.destination h2,.scene-heading h1,.region-card b{font-family:var(--subheading);font-weight:400;letter-spacing:-.4px}
+.region-card b{font-size:15px;line-height:1.4;margin-top:9px}.region-card small{font-size:10px;line-height:1.6}.section-header h2{font-size:24px}.section-header h2 small{font-family:var(--font);font-size:12px}.destination h2{font-size:30px}.intro p{font-size:14px}.destination-copy>p,.destination-note{font-size:12px;line-height:1.9}.country-line{font-size:13px}.nav{font-size:13px}.bottom-note p{font-size:12px}.build-note{font-size:10px}.tags span{font-size:11px}.micro{font-size:11px}.scene-caption{font-size:11px}
+#infoDialog h2{font-family:var(--journal);font-weight:400;font-size:29px;letter-spacing:2px;line-height:1.45;border-bottom:1px solid #b17b66;padding-bottom:15px;margin-top:9px}
+#dialogBody{font-family:var(--hand);font-size:22px;line-height:1.65}#dialogBody p,#dialogBody ul,#dialogBody li{font-family:var(--hand);font-size:22px;line-height:1.65;color:#51483f}#dialogBody b,#dialogBody strong{font-weight:400;color:#844d3d}#dialogBody a{font-family:var(--font);font-size:13px;overflow-wrap:anywhere}#dialogBody .empty-state b{font-family:var(--journal);font-size:32px}#infoDialog>.primary{font-family:var(--journal);font-size:17px;letter-spacing:.5px}#infoDialog .eyebrow,#infoDialog .dialog-bar{font-family:var(--journal)}
+#avatarDialog h2{font-family:var(--subheading);font-weight:400}#avatarDialog label{font-size:13px}input,select{font-size:13px}
+@media(max-width:740px){.nav{font-size:11px}.intro p{font-size:12px;max-width:250px}.section-header h2{font-size:21px}.section-header h2 small{font-size:11px}.destination h2{font-size:26px}.region-card b{font-size:13px}.region-card small{font-size:9px}.bottom-note p{font-size:11px}.micro{font-size:10px}.scene-caption{font-size:10px}.destination-copy>p{font-size:11px}.build-note{font-size:9px}#dialogBody p,#dialogBody ul,#dialogBody li{font-size:21px}#infoDialog h2{font-size:26px}#avatarDialog label{font-size:12px}}
+
+/* Pixel journal headings and Griun Yeeun handwriting in every popup. */
+@font-face{font-family:'AA Journal';src:url('assets/fonts/Galmuri11-Bold.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+dialog h2,#infoDialog h2,#avatarDialog h2{font-family:var(--journal);font-size:22px;font-weight:700;letter-spacing:0;line-height:1.65}
+dialog h3,dialog h4,#dialogBody h3,#dialogBody h4,#dialogBody .empty-state b{font-family:var(--journal);font-size:18px;font-weight:700;letter-spacing:0;line-height:1.8}
+#dialogBody b,#dialogBody strong{font-family:var(--journal);font-size:16px;font-weight:700;line-height:1.9}
+dialog p,dialog ul,dialog li,#dialogBody,#dialogBody p,#dialogBody ul,#dialogBody li{font-family:var(--hand);font-size:24px;line-height:1.75;font-weight:400}
+dialog .eyebrow,dialog .dialog-bar{font-family:var(--journal);font-weight:400;letter-spacing:1px}dialog .primary,#infoDialog>.primary{font-family:var(--journal);font-weight:400;font-size:14px;letter-spacing:0}
+#avatarDialog label,#avatarDialog .swatch-group span{font-family:var(--hand);font-size:21px;font-weight:400}#avatarDialog input,#avatarDialog select{font-family:var(--hand);font-size:20px;font-weight:400}
+#dialogBody a{font-family:var(--font);font-size:13px}dialog .close{font-family:sans-serif}
+@media(max-width:740px){dialog h2,#infoDialog h2,#avatarDialog h2{font-size:20px}dialog h3,dialog h4,#dialogBody h3,#dialogBody h4{font-size:16px}dialog p,dialog ul,dialog li,#dialogBody p,#dialogBody ul,#dialogBody li{font-size:23px}dialog .primary,#infoDialog>.primary{font-size:12px}#avatarDialog .primary{font-size:11px}}
+/* Chunky pixel controls, shared by navigation, maps and dialog actions. */
+button,.nav,.primary,.outline,.avatar-chip,.segmented button,dialog .primary,#infoDialog>.primary,#avatarDialog .primary{font-family:var(--journal);font-weight:700;letter-spacing:0;line-height:1.6}
+.nav{font-size:12px}.primary,.outline{font-size:12px}.avatar-chip{font-size:11px}.segmented button{font-size:11px}.region-card b{font-family:var(--journal);font-weight:700;font-size:12px}.region-card small{font-family:var(--font);font-weight:500}.text-button{font-size:10px}.scene-hud button#followPlayer{font-size:10px}.dpad button{font-size:17px}.map-controls button{font-size:17px}
+.nav,.primary,.outline,.avatar-chip,.segmented button,.map-controls,.scene-hud>div,.dpad button,.interact,dialog .close{border-radius:0;border:2px solid var(--ink);box-shadow:3px 3px 0 #88765d,inset 2px 2px 0 #ffffff99,inset -2px -2px 0 #51483f20;transition:none}
+.nav{background:var(--cream)}.nav.active{border-radius:0;background:var(--yellow)}.segmented button[aria-pressed=true]{box-shadow:2px 2px 0 #88765d,inset 2px 2px 0 #ffffff99}.map-controls{padding:2px}.map-controls button,.scene-hud button{box-shadow:none;border-radius:0}.primary:hover,.outline:hover,.nav:hover,.avatar-chip:hover,.dpad button:hover{background:#f9e6a4;filter:none;transform:none}
+.primary:active,.outline:active,.nav:active,.avatar-chip:active,.dpad button:active{transform:translate(2px,2px);box-shadow:1px 1px 0 #88765d,inset 2px 2px 0 #51483f20}.interact:active{transform:translate(calc(-50% + 2px),2px)}dialog .close{font-family:var(--journal);font-size:19px;box-shadow:1px 1px 0 #88765d}.region-card{border-radius:0}.region-card[aria-pressed=true]{box-shadow:3px 4px 0 #89734c,inset 0 -4px 0 var(--coral)}
+@media(max-width:740px){.nav{font-size:11px;padding:6px 10px}.segmented button{font-size:10px}.primary,.destination .primary{font-size:11px}.outline{font-size:10px}.region-card b{font-size:11px;line-height:1.6}.text-button{font-size:9px}.scene-hud button#followPlayer{font-size:9px}dialog .primary,#infoDialog>.primary,#avatarDialog .primary{font-size:12px}.avatar-chip{font-size:10px}}
+
+
+
+@font-face{font-family:'AA Subheading';src:url('assets/fonts/HiKR-ExtraBold.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+.intro h1,.section-header h2,.destination h2,.scene-heading h1{font-family:var(--subheading);font-weight:700;line-height:1.55;letter-spacing:0}
+
+/* Smaller handwritten copy, pixel labels for the smallest headings. */
+dialog p,dialog ul,dialog li,#dialogBody,#dialogBody p,#dialogBody ul,#dialogBody li{font-size:22px;line-height:1.75}
+#dialogBody .popup-subtitle,#avatarDialog label,#avatarDialog .swatch-group span{font-family:var(--journal);font-size:14px;font-weight:700;line-height:1.8;letter-spacing:0}
+#avatarDialog input,#avatarDialog select{font-family:var(--hand);font-size:19px;font-weight:400}
+@media(max-width:740px){dialog p,dialog ul,dialog li,#dialogBody p,#dialogBody ul,#dialogBody li{font-size:21px}#dialogBody .popup-subtitle,#avatarDialog label,#avatarDialog .swatch-group span{font-size:13px}#avatarDialog input,#avatarDialog select{font-size:18px}}
+/* Canada city controls inherit the established popup and pixel button language. */
+#quebecScene{width:100%;height:min(70vh,800px);min-height:480px;display:block;touch-action:none;background:#cde4e5;cursor:grab}.quebec-name{position:absolute;z-index:2;transform:translate(-50%,-100%);padding:3px 8px;background:#fffdf1e8;border:1px solid #b9ac8b;border-radius:3px;font-family:var(--font);font-size:11px;line-height:1.4;pointer-events:none;white-space:nowrap}.quebec-toolbar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:0 0 14px}.quebec-toolbar>div{display:flex;gap:8px}.quebec-toolbar button{background:var(--cream);border:2px solid var(--ink);box-shadow:2px 3px #958365;padding:8px 12px;font-size:11px}.quebec-toolbar button[aria-pressed=true]{background:var(--yellow)}.quebec-toolbar>span{font-size:11px;color:var(--muted)}#dialogBody .map-source-note{font-family:var(--font);font-size:12px;line-height:1.8;border-top:1px dashed #8ea99b;padding-top:12px}.scene-caption #sceneSources{margin-left:auto;white-space:nowrap}
+@media(max-width:740px){#quebecScene{height:66vh;min-height:460px}.quebec-toolbar{flex-wrap:wrap;gap:10px}.quebec-toolbar>span{font-size:10px}.quebec-toolbar button{font-size:10px;padding:8px}.quebec-name{font-size:10px}.scene-caption{flex-wrap:wrap}}
+.quebec-toolbar{flex-wrap:wrap;justify-content:flex-start;gap:12px 16px}.quebec-toolbar>div{flex-wrap:wrap;gap:7px}.quebec-toolbar .drag-modes{margin-left:auto}.quebec-toolbar .drag-modes button[aria-pressed=true]{background:var(--mint)}.quebec-toolbar p{flex-basis:100%;font-size:11px;line-height:1.8;color:var(--muted);margin:0}.quebec-toolbar .orbit-actions button{font-size:10px;padding:7px 10px}#quebecScene{cursor:grab}#quebecScene:active{cursor:grabbing}
+@media(max-width:740px){.quebec-toolbar{gap:11px}.quebec-toolbar .drag-modes{margin-left:0}.quebec-toolbar button{padding:7px 9px}.quebec-toolbar .orbit-actions button{font-size:9px}.quebec-toolbar p{font-size:10px}}
+
+#quebecScene{background:#ead0bc}
+
+#timesScene{width:100%;height:min(70vh,800px);min-height:480px;display:block;touch-action:none;background:#18223e;cursor:grab}#timesScene:active{cursor:grabbing}@media(max-width:740px){#timesScene{height:66vh;min-height:460px}}
+
+.simple-camera{align-items:center;gap:10px 16px}.simple-camera .camera-buttons{gap:6px}.simple-camera .camera-zoom{display:flex;align-items:center;gap:8px;margin-left:auto}.simple-camera .camera-zoom input{width:120px;max-width:25vw;padding:0;accent-color:#688e85;cursor:pointer}.simple-camera output{font-family:'AA Button',sans-serif;font-size:11px;width:42px;text-align:center;font-variant-numeric:tabular-nums}.simple-camera p{margin:0;font-size:10px}.simple-camera button{padding:7px 10px;font-size:10px}@media(max-width:740px){.simple-camera{gap:10px}.simple-camera .camera-zoom{margin-left:0}.simple-camera .camera-buttons{gap:5px}.simple-camera .camera-buttons button{font-size:9px;padding:7px 8px}.simple-camera .camera-zoom input{width:135px;max-width:40vw}}
+
+#mexicoScene{width:100%;height:min(70vh,800px);min-height:480px;display:block;touch-action:none;background:#d7e5e9;cursor:grab}#mexicoScene:active{cursor:grabbing}@media(max-width:740px){#mexicoScene{height:66vh;min-height:460px}}
+
+#panamaScene{width:100%;height:min(70vh,800px);min-height:480px;display:block;touch-action:none;background:#b9dbe5;cursor:grab}#panamaScene:active{cursor:grabbing}@media(max-width:740px){#panamaScene{height:66vh;min-height:460px}}
+
+#peruScene{width:100%;height:min(70vh,800px);min-height:480px;display:block;touch-action:none;background:#c1d9df;cursor:grab}#peruScene:active{cursor:grabbing}@media(max-width:740px){#peruScene{height:66vh;min-height:460px}}
+
+#brazilScene{width:100%;height:min(70vh,800px);min-height:480px;display:block;touch-action:none;background:#b8d9e0;cursor:grab}#brazilScene:active{cursor:grabbing}@media(max-width:740px){#brazilScene{height:66vh;min-height:460px}}
+
+.scene-jump{position:absolute;right:25px;bottom:170px;z-index:3;min-width:76px;min-height:44px;padding:10px 14px;background:var(--yellow);border:2px solid var(--ink);box-shadow:3px 4px #958365;touch-action:none;font-family:var(--journal);font-weight:700;font-size:12px}
+
+#argentinaScene{width:100%;height:min(70vh,800px);min-height:480px;display:block;touch-action:none;background:#d0dfdf;cursor:grab}#argentinaScene:active{cursor:grabbing}@media(max-width:740px){#argentinaScene{height:66vh;min-height:460px}}
+
+.scene-dance{position:absolute;right:25px;bottom:225px;z-index:3;min-height:44px;min-width:110px;font-family:var(--journal);background:#b5dcd5;border:3px solid #574f3e;box-shadow:4px 4px 0 #8c8065}.scene-dance[aria-pressed="true"]{background:#f1d97d}
+
+#chileScene{width:100%;height:min(70vh,800px);min-height:480px;display:block;touch-action:none;background:#c3d9e0;cursor:grab}#chileScene:active{cursor:grabbing}@media(max-width:740px){#chileScene{height:66vh;min-height:460px}}
+
+/* Thin, natural handwriting. Pixel controls and academic body copy stay independent. */
+:root{font-synthesis:none}
+dialog p,dialog ul,dialog li,#dialogBody,#dialogBody p,#dialogBody ul,#dialogBody li{font-size:20px;line-height:1.75;font-weight:400}
+#dialogBody input,#dialogBody textarea,#avatarDialog input,#avatarDialog select{font-family:var(--hand);font-size:19px;font-weight:400;line-height:1.65}
+@media(max-width:740px){dialog p,dialog ul,dialog li,#dialogBody p,#dialogBody ul,#dialogBody li{font-size:19px}#dialogBody input,#dialogBody textarea,#avatarDialog input,#avatarDialog select{font-size:18px}}

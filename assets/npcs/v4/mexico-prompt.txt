@@ -1,0 +1,16 @@
+Edit actual AA Avatar Studio source sheet, twelve rows by four columns. Lock original head/eye/face construction, short stocky body, subtle original outlines and muted flat coloring. Change only country costumes, small props and restrained poses. Full transparent bodies, FRONT BACK LEFT RIGHT. Native art takes precedence over costume detail. 
+
+1. Mexican cultural guide man, tan skin dark wavy hair BROWN eyes, modest navy embroidered charro suit and medium tan charro hat, warm small smile one hand gently gesturing toward architecture, no weapons.
+2. Woman taco cooking-workshop chef, warm brown skin, black hair braided into bun HAZEL eyes, pale cream blouse covered shoulders long skirt and terracotta full apron, concentrating on a small plate with a taco held at chest height.
+3. Elderly woman tortilla artisan, medium tan skin silver braid GREEN GRAY eyes, muted embroidered long-sleeve blouse long navy skirt, gentle smiling eyes, patting a small round tortilla between hands near waist.
+4. Young male market-food researcher, dark skin and short curls DARK BROWN eyes, sage collared shirt long tan pants and olive apron, curious eyebrows, holds a small corn cob and notebook.
+5. Mother in Alameda park, olive skin long dark ponytail BROWN eyes, muted rose cardigan long cream skirt, laughing softly while raising a camera.
+6. Father with light brown skin chestnut cropped hair HAZEL eyes, dusty blue shirt long gray trousers, relaxed grin one hand holds a small folded park map.
+7. Child girl with warm tan skin short black bob DARK BROWN eyes, pale mint long-sleeve dress leggings shoes, delighted smile lifting one hand to show a tiny drawing.
+8. Elderly light-skinned woman with white curls BLUE GRAY eyes, lavender shawl long brown skirt, seated reading a book on a simple narrow wooden bench, calm concentrated expression.
+9. Elderly tan-skinned man with gray moustache BROWN eyes, beige cardigan long navy trousers, standing with one hand over heart laughing in conversation with his wife.
+10. Teenage girl with dark skin springy short curls GREEN eyes, pale mustard hoodie long denim trousers, seated on a small stool drawing with a pencil in lap sketchbook, focused brow.
+11. Young adult male friend with olive skin auburn short hair HAZEL eyes, teal shirt brown trousers, gently smiling while holding a small acoustic guitar in playing posture.
+12. Young female park-food helper with light brown skin braided dark hair BROWN eyes, cream shirt dusty orange apron long trousers, smiling with eyes gently closed, carrying a small covered basket.
+
+Reference: exact original four-view player drawing. Built-in image generation. Original image pixels retained.

@@ -1,0 +1,15 @@
+{
+  "land": {
+    "name": "Natural Earth 1:50m Land",
+    "version": "4.0.0",
+    "url": "https://www.naturalearthdata.com/downloads/50m-physical-vectors/50m-land/",
+    "download": "https://naciscdn.org/naturalearth/50m/physical/ne_50m_land.zip"
+  },
+  "license": "Public domain",
+  "projection": "Equirectangular overview",
+  "simplification": "Douglas-Peucker, 0.14 degrees; overview coastline only",
+  "explorationPoints": {
+    "source": "AA detailed handover plan, 2026-10-15, section 16; approximate exploration-center coordinates in data.js",
+    "note": "Not national capitals or survey-grade locations; no national borders displayed."
+  }
+}

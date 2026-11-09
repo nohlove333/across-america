@@ -1,0 +1,25 @@
+/* Every map shares cream reading surfaces and mint window chrome.
+   Loaded after component styles so notebook, NPC, quiz and hall agree. */
+:root{--popup-paper:#fdf8e9;--popup-ink:#51483f;--popup-muted:#6f6352;--popup-chrome:#b4dcd4}
+dialog,#infoDialog,#avatarDialog,
+#infoDialog:is(.country-dialog,.source-dialog,.npc-nav-dialog,.hall-dialog,.quiz-dialog,.password-dialog,.conversation-dialog){background:var(--popup-paper);color:var(--popup-ink)}
+#infoDialog #dialogBody,#avatarDialog .avatar-editor{background:var(--popup-paper);color:var(--popup-ink)}
+dialog .dialog-bar,#avatarDialog .dialog-bar{background:var(--popup-chrome);color:var(--popup-ink)}
+dialog h2,dialog h3,dialog h4,dialog label{color:var(--popup-ink)}
+#infoDialog #dialogBody :is(p,li,ul),#avatarDialog :is(p,label){color:var(--popup-ink)}
+#infoDialog #dialogBody :is(small,.learning-source,.popup-subtitle,.route-counts){color:var(--popup-muted)}
+#infoDialog #dialogBody a{color:#365f54}
+#infoDialog #dialogBody :is(.country-facts,.reading-concept,.final-card,.activity-field,.empty-state){background:#fffaf0}
+#infoDialog #dialogBody :is(input,textarea,select),#avatarDialog :is(input,select){background:#fffdf7;color:var(--popup-ink)}
+#infoDialog #dialogBody :is(input,textarea)::placeholder{color:#786b59;opacity:1}
+/* Keep semantic success feedback and small selected accents, never a mint page. */
+#infoDialog #dialogBody .answer-feedback.correct{color:#365f43}
+#infoDialog #dialogBody .quiz-hints{background:#f7edcf}
+#infoDialog #dialogBody .conversation-speech{background:var(--popup-paper)}
+
+/* Longer evidence is academic reading, with the same clear body font as cards. */
+#infoDialog #dialogBody .evidence-reading,#infoDialog #dialogBody .record p,#infoDialog #dialogBody .geography-finding p{font:500 15px/1.95 var(--font);color:var(--popup-ink)}
+.geography-finding{background:#fffaf0;border-left:3px solid #8bab9c;padding:14px 18px;margin:16px 0}
+#infoDialog #dialogBody .geography-finding h3,#infoDialog #dialogBody .geography-finding h4{font:700 14px/1.8 var(--journal);margin:0 0 8px}
+.password-piece span{overflow-wrap:anywhere}
+@media(max-width:740px){#infoDialog #dialogBody .evidence-reading,#infoDialog #dialogBody .record p,#infoDialog #dialogBody .geography-finding p{font-size:14px}}

@@ -1,0 +1,4 @@
+// Attribution verified against the newspaper's own publication, 2026-10-18.
+export const poemCredit='박세현, 「너무 괜찮다」 중에서 · 『본의 아니게』, 문학의전당';
+export const poemURL='https://www.hani.co.kr/arti/culture/book/504085.html';
+export const poemReading=`<section class="hall-poem"><span class="eyebrow">THE WORDS BEHIND THE KEY</span><h3>너무 괜찮다</h3><p class="poem-author">박세현</p><blockquote>\uc6c3\uc5b4\ub3c4\u0020\uad1c\ucc2e\uace0\u0020\uc6b8\uc5b4\ub3c4\u0020\uad1c\ucc2e\ub2e4<br>\uc6c3\uc9c0\u0020\uc54a\uc544\ub3c4\u0020\uad1c\ucc2e\uace0\u0020\uc6b8\uc9c0\u0020\uc54a\uc544\ub3c4\u0020\uad1c\ucc2e\ub2e4</blockquote><p class="learning-source">${poemCredit}</p><p>탐험의 마지막 암호는 이 시의 두 구절에서 가져왔습니다. 시 전문은 아래 원문에서 읽을 수 있습니다.</p><a class="primary poem-original" href="${poemURL}" target="_blank" rel="noopener">한겨레 ‘시인의 마을’에서 시 전문 읽기 ↗</a><p class="learning-source">출처: 한겨레, ‘[시인의 마을] 너무 괜찮다 / 박세현’. 인용 구절의 저작권은 원저작자에게 있습니다.</p></section>`;

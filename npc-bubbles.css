@@ -1,0 +1,21 @@
+/* Native pixel UI, drawn in CSS. Reference images are visual guides, not shipped artwork. */
+.living-npc-bubble{position:absolute;z-index:16;box-sizing:border-box;max-width:min(260px,calc(100% - 16px));width:max-content;color:#181818;font:15px/1.65 "AA Journal",sans-serif;pointer-events:none;isolation:isolate;filter:drop-shadow(0 3px 0 #b9b4dd66);--tail-x:50%}
+.living-npc-bubble[hidden]{display:none!important}.npc-bubble-frame{position:relative;padding:3px;background:rgba(255,255,255,.76);clip-path:polygon(0 9px,3px 9px,3px 3px,9px 3px,9px 0,calc(100% - 9px) 0,calc(100% - 9px) 3px,calc(100% - 3px) 3px,calc(100% - 3px) 9px,100% 9px,100% calc(100% - 9px),calc(100% - 3px) calc(100% - 9px),calc(100% - 3px) calc(100% - 3px),calc(100% - 9px) calc(100% - 3px),calc(100% - 9px) 100%,9px 100%,9px calc(100% - 3px),3px calc(100% - 3px),3px calc(100% - 9px),0 calc(100% - 9px))}
+.npc-bubble-paper{position:relative;padding:8px 12px 10px;background:transparent;clip-path:polygon(0 6px,3px 6px,3px 3px,6px 3px,6px 0,calc(100% - 6px) 0,calc(100% - 6px) 3px,calc(100% - 3px) 3px,calc(100% - 3px) 6px,100% 6px,100% calc(100% - 6px),calc(100% - 3px) calc(100% - 6px),calc(100% - 3px) calc(100% - 3px),calc(100% - 6px) calc(100% - 3px),calc(100% - 6px) 100%,6px 100%,6px calc(100% - 3px),3px calc(100% - 3px),3px calc(100% - 6px),0 calc(100% - 6px))}
+.living-npc-bubble .npc-bubble-name{display:block;margin-bottom:3px;font:11px/1.5 "AA Journal",sans-serif;color:#686271}.living-npc-bubble p{margin:0;white-space:normal;overflow-wrap:anywhere;max-width:224px}.living-npc-bubble::before,.living-npc-bubble::after{content:"";position:absolute;left:var(--tail-x);pointer-events:none;clip-path:polygon(0 0,100% 0,100% 25%,75% 25%,75% 50%,50% 50%,50% 75%,25% 75%,25% 100%,0 100%)}
+.living-npc-bubble::before{top:calc(100% - 3px);width:18px;height:21px;background:rgba(17,17,17,.65);transform:translateX(-50%)}.living-npc-bubble::after{top:calc(100% - 4px);width:12px;height:16px;background:rgba(255,255,255,.76);transform:translateX(-50%)}
+.living-npc-bubble[data-tail=up]::before{top:-18px;transform:translateX(-50%) rotate(180deg)}.living-npc-bubble[data-tail=up]::after{top:-13px;transform:translateX(-50%) rotate(180deg)}
+@media(max-width:440px){.living-npc-bubble{font-size:14px;line-height:1.7}.npc-bubble-paper{padding:7px 10px 9px}}
+
+/* A hollow border is essential: a black full rectangle would make the
+   translucent paper opaque. Text remains solid and pointer events pass through. */
+.npc-bubble-frame::before{content:"";position:absolute;inset:0;padding:3px;background:rgba(17,17,17,.82);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.living-npc-bubble{transition:opacity .24s ease,transform .24s ease;will-change:opacity,transform}
+.living-npc-bubble[data-phase=exit]{opacity:0;transform:translateY(-5px)}
+@media(prefers-reduced-motion:reduce){.living-npc-bubble{transition:none;will-change:auto}}
+
+/* Requested two-thirds speech scale; text stays solid over translucent paper. */
+.living-npc-bubble{max-width:min(180px,calc(100% - 16px));font-size:10px;line-height:1.7}.living-npc-bubble .npc-bubble-name{font-size:8px;margin-bottom:2px}.npc-bubble-paper{padding:5px 8px 6px}.living-npc-bubble p{max-width:150px}
+
+/* Fixed maximum matching the compact Gabriel reference. */
+.living-npc-bubble{max-width:min(112px,calc(100% - 16px))}.living-npc-bubble p{max-width:90px;word-break:keep-all;overflow-wrap:anywhere}

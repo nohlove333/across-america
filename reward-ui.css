@@ -1,0 +1,95 @@
+/* Reference: portrait/question/input/hints/actions with cream reading surface. */
+#infoDialog.quiz-dialog[open]{width:min(800px,calc(100vw - 28px));padding:52px 0 0}
+#infoDialog.quiz-dialog #dialogTitle{font:700 16px/1.5 var(--journal);margin:0;padding:12px 28px 16px;border-bottom:1px solid #c2b8a3}
+#infoDialog.quiz-dialog #dialogBody{padding:24px 28px 0}
+#infoDialog.quiz-dialog #dialogBody :is(p,input,small,output){font-family:var(--font);font-size:14px;line-height:1.85;letter-spacing:0}
+#infoDialog.quiz-dialog .quiz-person{display:flex;align-items:center;gap:17px;margin:0 0 22px}
+.quiz-portrait{display:block;flex-shrink:0;background-repeat:no-repeat;image-rendering:auto}
+#infoDialog.quiz-dialog .quiz-person h3{margin:3px 0;font:700 22px/1.5 var(--journal)}
+#infoDialog.quiz-dialog .quiz-person p{margin:0;font-size:12px;color:#6c665d}
+#infoDialog.quiz-dialog .quiz-person small{font:11px/1.6 var(--journal);color:#786d57}
+.coin-badge{margin-left:auto;flex-shrink:0;padding:7px 9px;border:1px solid #b69b55;background:#fff0bc;font:10px/1.5 var(--journal);color:#685121}
+#infoDialog.quiz-dialog .quiz-prompt{padding:20px 22px;margin:0 0 14px;background:#f3f2ed;border:1px solid #c6c2b5}
+#infoDialog.quiz-dialog .quiz-evidence{border:0;padding:0;margin:10px 0 20px}
+#infoDialog.quiz-dialog #answerForm{display:flex;flex-direction:column;gap:8px;margin:22px 0 0}
+#infoDialog.quiz-dialog #answerForm label{margin:0;font:500 14px/1.7 var(--font)}
+#infoDialog.quiz-dialog #answerForm input{min-height:52px;border:2px solid #a4aaac;border-radius:0;background:white}
+#infoDialog.quiz-dialog #answerForm small{color:#7c776d;font-size:12px}
+#infoDialog.quiz-dialog .quiz-hints{border:0;padding:0;margin:24px 0 16px;background:transparent}
+.quiz-hints #quizHintList{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+#infoDialog.quiz-dialog .quiz-hint{width:100%;border:1px solid #d6c7a6;background:#fff3d6;padding:14px 18px;margin:0}
+.quiz-hint p{margin:0}.quiz-hint b{font-weight:700}
+#infoDialog.quiz-dialog #quizHintNext{min-height:44px;font-size:12px;padding:8px 16px;margin:0;background:#fffaf0;border:1px solid #b2a58a;box-shadow:2px 2px #d0c6b0}
+#infoDialog.quiz-dialog #quizHintCount{font-size:11px}
+#infoDialog.quiz-dialog .quiz-submit{position:sticky;bottom:0;background:#fdf8e9;border-top:1px solid #c9bfaa;margin:20px -28px 0;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;gap:14px;z-index:2}
+.quiz-submit>span{font:12px var(--font)}.quiz-submit button{min-height:48px;padding:10px 24px}
+#infoDialog.quiz-dialog .activity-visual{display:none}
+#infoDialog.quiz-dialog #activityForm{display:flex;flex-direction:column;gap:12px}
+#infoDialog.quiz-dialog .activity-field{width:100%;margin:0;padding:14px}
+#infoDialog.quiz-dialog .activity-slot{font:13px/1.7 var(--font)}
+.keyword-tags{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 8px}
+#infoDialog .keyword-tags span{border:1px solid #a3b6af;background:#eaf0e9;color:#3b6258;padding:6px 10px;font:12px/1.6 var(--font)}
+#infoDialog .geo-keyword{font-weight:700;color:#315f53;background:linear-gradient(transparent 65%,#e4e9cc 65%)}
+.reward-card{position:relative;width:min(240px,75%);margin:22px auto 28px;filter:drop-shadow(5px 7px 0 #a4977d);animation:card-reveal .35s ease-out}
+.reward-card>img{width:100%;height:auto;display:block;image-rendering:pixelated}
+.reward-card-label{position:absolute;inset:74% 10% 11%;background:#fff4c9dc;display:flex;flex-direction:column;justify-content:center;text-align:center;gap:3px;padding:3px}
+#infoDialog #dialogBody .reward-card-label small{font:7px/1.6 var(--journal)}
+#infoDialog #dialogBody .reward-card-label strong{font:700 12px/1.5 var(--journal);color:#3d453c}
+#infoDialog #dialogBody .reward-card-label span{font:7px/1.5 var(--font);color:#5a6052}
+.card-back .reward-card-label{inset:22% 12% 31%;background:#fff4d6;border:2px solid #e6c475}
+#infoDialog #dialogBody .card-back .reward-card-label strong{font-size:23px;line-height:1.7}
+#infoDialog.treasure-dialog[open]{width:min(720px,calc(100vw - 28px))}
+.chest-unlock{text-align:center}.chest-unlock>img{display:block;margin:10px auto;image-rendering:pixelated;filter:grayscale(.6)}
+#infoDialog #dialogBody .chest-unlock p{font:14px/1.9 var(--font)}
+.bag-country>.reward-card{width:190px}.bag-country .geography-finding{max-width:650px;margin:20px auto}
+@keyframes card-reveal{from{transform:translateY(12px) scale(.94);opacity:0}to{transform:none;opacity:1}}
+@media(prefers-reduced-motion:reduce){.reward-card{animation:none}}
+@media(max-width:600px){#infoDialog.quiz-dialog #dialogBody{padding:20px 18px 0}#infoDialog.quiz-dialog #dialogTitle{padding:10px 18px 14px}#infoDialog.quiz-dialog .quiz-submit{margin-left:-18px;margin-right:-18px;padding:12px 18px}.coin-badge{font-size:8px;padding:5px}#infoDialog.quiz-dialog .quiz-person{gap:12px}#infoDialog.quiz-dialog .quiz-person h3{font-size:19px}.quiz-submit>span{font-size:11px}#infoDialog.quiz-dialog .quiz-prompt{padding:17px}}
+
+.reward-card-label small,.reward-card-label span{display:none}#infoDialog #dialogBody .card-back .reward-card-label small{display:block}#infoDialog #dialogBody .card-back .reward-card-label strong{overflow-wrap:anywhere}.card-back .reward-card-label{padding:12px}
+#infoDialog.quiz-dialog #dialogBody .quiz-person .coin-badge{color:#685121}#infoDialog.quiz-dialog #dialogBody .quiz-submit{margin-top:20px}#infoDialog.quiz-dialog .quiz-submit button{margin-top:0}
+/* Keep answering and grading visible while hints scroll independently. */
+#infoDialog.compact-quiz[open]{max-height:94dvh;overflow:hidden;display:flex;flex-direction:column;padding-top:42px}
+#infoDialog.compact-quiz #dialogTitle{flex:none;padding:8px 24px;font-size:15px}
+#infoDialog.compact-quiz #dialogBody{min-height:0;flex:1;display:flex;flex-direction:column;overflow:hidden;padding:12px 24px 0;max-height:calc(94dvh - 100px)}
+#infoDialog.compact-quiz .quiz-person{flex:none;margin:0 0 10px;gap:12px}
+#infoDialog.compact-quiz .quiz-person h3{font-size:18px;margin:0}
+#infoDialog.compact-quiz .quiz-person p{margin:0;font-size:11px}
+#infoDialog.compact-quiz .quiz-portrait{max-height:64px;max-width:64px;object-fit:contain}
+.quiz-reading{flex:1;min-height:90px;overflow-y:auto;overscroll-behavior:contain;padding:0 5px 8px 0}
+#infoDialog.compact-quiz .quiz-prompt{padding:12px 15px;margin-bottom:12px}
+#infoDialog.compact-quiz .quiz-hints{margin:10px 0;padding:0;background:transparent}
+#infoDialog.compact-quiz .quiz-hint{padding:10px 12px}
+#infoDialog.compact-quiz .quiz-evidence{margin:10px 0}
+.quiz-answer-dock{flex:none;border-top:2px solid #c4b997;background:#fffaf0;padding:10px 0 12px}
+#infoDialog.compact-quiz #answerForm{margin:0;gap:5px;display:block}
+.quiz-input-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:stretch;gap:8px;margin-top:5px}
+#infoDialog.compact-quiz .quiz-input-row input{min-height:46px;padding:8px 12px;font-size:16px}
+#infoDialog.compact-quiz .quiz-input-row button{margin:0;min-height:46px;padding:8px 14px;font-size:12px}
+#infoDialog.compact-quiz .answer-feedback{margin:8px 0 0;padding:9px 12px;max-height:22dvh;overflow:auto;font-size:13px;line-height:1.6;outline-offset:-2px}
+#infoDialog.compact-quiz .answer-feedback p{font-size:12px;line-height:1.6;margin:3px 0 0}
+.quiz-dock-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:8px}
+.quiz-dock-meta>span{font:11px var(--font)}
+.quiz-dock-meta button{font-size:11px!important;padding:7px 12px;min-height:38px!important}
+#infoDialog.bag-dialog{width:min(1080px,calc(100vw - 24px));max-width:1080px}
+#infoDialog.bag-dialog #dialogBody{padding:16px 24px}
+#infoDialog.bag-dialog #dialogBody>p{font:13px/1.7 var(--font);margin:4px 0 10px}
+.bag-card-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:10px 0 16px}
+#dialogBody .bag-card{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;min-width:0;padding:9px 7px;gap:5px;border:2px solid #b6a583;background:#fff5d7;box-shadow:2px 3px #c4af7f}
+.bag-card-number{font:11px/1.5 var(--journal)}
+.bag-card img{display:block;width:auto;max-width:100%;height:100px;object-fit:contain}
+.bag-card .bag-flag{height:100px;width:64px}
+#dialogBody .bag-card strong{font:13px/1.7 var(--journal);overflow-wrap:anywhere}
+#dialogBody .bag-card small{font:10px/1.5 var(--font)}
+#dialogBody .bag-card.locked{background:#ece6d6;opacity:.65;box-shadow:none}
+#dialogBody .bag-card.flipped{border-color:#769f8a;background:#eff4dc}
+.bag-record-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:12px}
+#infoDialog .password-order{padding:12px 16px;border:2px solid #8ba18c;background:#eaf0df;margin:12px 0}
+#infoDialog .password-order h3{font-size:15px;margin:0 0 8px}
+#infoDialog #dialogBody .password-order p{font:14px/1.8 var(--journal);margin:4px 0}
+#infoDialog .password-order small{font:11px/1.6 var(--font)}
+#dialogBody .treasure-flip-card{display:block;width:min(200px,65%);margin:8px auto 14px;padding:0;border:0;box-shadow:none;background:transparent}
+.treasure-flip-card .reward-card{width:100%;margin:0;pointer-events:none}
+#infoDialog.treasure-dialog .geography-finding{margin:12px 0;padding:10px}
+@media(max-width:600px){#infoDialog.compact-quiz #dialogBody{padding:10px 14px 0}#infoDialog.compact-quiz .quiz-person .coin-badge{font-size:8px}.bag-card-grid{gap:7px}#infoDialog.bag-dialog #dialogBody{padding:12px}.bag-card img,.bag-card .bag-flag{height:74px}.bag-card-number{font-size:9px}#dialogBody .bag-card strong{font-size:11px}#dialogBody .bag-card small{font-size:9px}.bag-record-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.quiz-dock-meta button{max-width:65%}}
+@media(max-height:530px){#infoDialog.compact-quiz .quiz-person{display:none}.quiz-reading{min-height:65px}#infoDialog.compact-quiz #dialogBody{max-height:calc(94dvh - 85px)}.quiz-dock-meta{margin-top:4px}}

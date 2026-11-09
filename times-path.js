@@ -1,0 +1,8 @@
+import {TIMES_SIZE,timesCanWalk,timesSegmentClear} from './times-data.js?v=quick91';
+// Sample grid edges as well as vertices: thin rails cannot be crossed between cells.
+export function findTimesPath(start,goal){const step=20,cols=Math.ceil(TIMES_SIZE[0]/step)+1,rows=Math.ceil(TIMES_SIZE[1]/step)+1,key=(x,y)=>y*cols+x,point=(x,y)=>({x:x*step,y:y*step}),valid=(x,y)=>x>=0&&y>=0&&x<cols&&y<rows&&timesCanWalk(x*step,y*step);if(!timesCanWalk(goal.x,goal.y)||!timesCanWalk(start.x,start.y))return null;
+ const snap=p=>{const x=Math.round(p.x/step),y=Math.round(p.y/step);let best=null,distance=Infinity;for(let radius=0;radius<5;radius++){for(let dx=-radius;dx<=radius;dx++)for(let dy=-radius;dy<=radius;dy++){const xx=x+dx,yy=y+dy;if(!valid(xx,yy)||!timesSegmentClear(p,point(xx,yy)))continue;const d=Math.hypot(p.x-xx*step,p.y-yy*step);if(d<distance){best=[xx,yy];distance=d;}}if(best)return best;}return null;};
+ const first=snap(start),last=snap(goal);if(!first||!last)return null;const from=new Int32Array(cols*rows).fill(-1),queue=[key(...first)],end=key(...last);from[queue[0]]=queue[0];
+ for(let n=0;n<queue.length&&from[end]===-1;n++){const k=queue[n],x=k%cols,y=Math.floor(k/cols);for(const [dx,dy]of [[1,0],[-1,0],[0,1],[0,-1]]){const xx=x+dx,yy=y+dy,at=key(xx,yy);if(!valid(xx,yy)||from[at]!==-1||!timesSegmentClear(point(x,y),point(xx,yy)))continue;from[at]=k;queue.push(at);}}
+ if(from[end]===-1)return null;const route=[];for(let k=end;k!==queue[0];k=from[k])route.push(point(k%cols,Math.floor(k/cols)));route.push(point(...first));route.reverse();route.push({x:goal.x,y:goal.y});return route;
+}
